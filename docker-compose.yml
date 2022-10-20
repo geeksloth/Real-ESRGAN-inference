@@ -1,0 +1,12 @@
+version: '3'
+services:
+  real-esrgan:
+    build:
+      dockerfile: "Dockerfile"
+      context: .
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./src:/real-esrgan
+    working_dir: /real-esrgan
+    command: ["python3", "main.py"]
